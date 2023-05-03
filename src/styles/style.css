@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+
+App Bar
+
+*/
+
+.app-bar {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  z-index: 99;
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand h1 {
+  font-size: 22px;
+  color: #133563;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 60px;
+  left: -180px;
+  width: 150px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+main {
+  flex: 1;
+  padding: 32px;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+/* 
+
+Movies 
+
+*/
+
+.movies {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 32px 0;
+}
+
+/* 
+
+Movie Item
+
+*/
+
+.movie-item {
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-item__header {
+  position: relative;
+}
+
+.movie-item .movie-item__header .movie-item__header__poster {
+  width: 100%;
+}
+
+.movie-item .movie-item__header .movie-item__header__rating {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.movie-item
+  .movie-item__header
+  .movie-item__header__rating
+  .movie-item__rating__score {
+  margin-left: 10px;
+}
+
+.movie-item .movie-item__content {
+  padding: 1rem;
+}
+
+.movie-item .movie-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.movie-item .movie-item__content h3 a {
+  text-decoration: none;
+  color: #133563;
+}
+
+.movie-item .movie-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*  */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/* 
+
+Movie
+
+*/
+
+.movie {
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 23px;
+  margin: 0 auto;
+}
+
+.movie .movie__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.movie .movie__info h4 {
+  margin: 8px 0;
+}
+
+/* 
+
+Like Button
+
+*/
+
+.like {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #133563;
+  /*  */
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border: 0;
+  border-radius: 50%;
+  /*  */
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 
+
+Footer 
+
+*/
+
+footer {
+  padding: 1rem;
+}
+
+footer #footerTools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+footer p {
+  margin-top: 1rem;
+
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #133563;
+}
+
+/* 
+
+Button
+
+*/
+
+.btn {
+  display: inline-block;
+  padding: 16px 24px;
+  background-color: #133563;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 8px 0 rgba(48, 66, 231, 0.3);
+}
+
+.btn:active {
+  box-shadow: 0 4px 8px 0 rgba(41, 82, 196, 0.1);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #3c79c9;
+}
