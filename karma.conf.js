@@ -1,5 +1,8 @@
 // Karma configuration
 // Generated on Fri Jul 03 2020 20:15:52 GMT+0700 (Western Indonesia Time)
+const path = require('path');
+const Dotenv = require('dotenv-webpack');
+
 module.exports = config => {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -28,6 +31,13 @@ module.exports = config => {
       // webpack configuration
       devtool: 'inline-source-map',
       mode: 'development',
+      plugins: [
+        new Dotenv({
+          path: path.resolve(__dirname, '.env'),
+          systemvars: true,
+          safe: true,
+        }),
+      ],
     },
 
     webpackMiddleware: {
